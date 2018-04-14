@@ -159,12 +159,22 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Core\Models\Beer.cs" />
+    <Compile Include="Core\Models\Style.cs" />
+    <Compile Include="Core\Models\Brewery.cs" />
+    <Compile Include="Core\Models\Lable.cs" />
     <Compile Include="Core\Models\BrewerDbResults\BrewerDbCollectionResult.cs" />
     <Compile Include="Core\Models\BrewerDbResults\BrewerDbResult.cs" />
     <Compile Include="Core\Models\BrewerDbResults\BrewerDbSingelResult.cs" />
+    <Compile Include="Core\Repositories\IBeerRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Persistence\Repositories\BeerRepository.cs" />
+    <Compile Include="Core\Repositories\IStyleRepository.cs" />
+    <Compile Include="Persistence\Repositories\BreweryRepository.cs" />
+    <Compile Include="Core\Repositories\IBreweryRepository.cs" />
+    <Compile Include="Persistence\Repositories\StyleRepository.cs" />
     <Compile Include="Persistence\Repositories\Base\BreweryDbBaseRepository.cs" />
     <Compile Include="Core\Repositories\Base\IBreweryDbBaseRepository.cs" />
     <Compile Include="Persistence\SingletonBreweryDbHttpClient.cs" />
