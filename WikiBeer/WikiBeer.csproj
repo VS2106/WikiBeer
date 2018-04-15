@@ -160,6 +160,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BeersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Core\Helpers\SingleSelectList.cs" />
     <Compile Include="Core\Models\Beer.cs" />
     <Compile Include="Core\Models\Style.cs" />
     <Compile Include="Core\Models\Brewery.cs" />
