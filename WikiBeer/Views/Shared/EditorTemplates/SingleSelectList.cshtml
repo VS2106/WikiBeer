@@ -1,0 +1,8 @@
+﻿@model WikiBeer.Core.Helpers.SingleSelectList
+
+@{
+    ViewData.Add("class", "selectpicker margin");
+}
+@Html.DropDownListFor(
+    m => m, Model.Items,
+    ViewData)

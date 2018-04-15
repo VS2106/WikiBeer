@@ -5,10 +5,21 @@ using System.Web.Mvc;
 
 namespace WikiBeer.Core.Helpers
 {
-    public class SingleSelectList<TCollectionItem, TKey>
+    public abstract class SingleSelectList
     {
-        public SelectListItem[] Items { get; protected set; }
+        public List<SelectListItem> Items { get; protected set; }
 
+        public string SelectedText
+        {
+            get
+            {
+                return Items.Single(sli => sli.Selected).Text;
+            }
+        }
+    }
+
+    public class SingleSelectList<TCollectionItem, TKey> : SingleSelectList
+    {
         public SingleSelectList(
             IEnumerable<TCollectionItem> items,
             Func<TCollectionItem, TKey> getValue,
@@ -27,7 +38,7 @@ namespace WikiBeer.Core.Helpers
                     };
                 })
                 .OrderBy(i => i.Text)
-                .ToArray();
+                .ToList();
         }
     }
 }

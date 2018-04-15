@@ -27,11 +27,19 @@ namespace WikiBeer.Core.Models.ViewModels.Beers
             CurrentPageNumber = brewerDbBeersResult.CurrentPageNumber;
             TotalNumberOfPages = brewerDbBeersResult.TotalNumberOfPages;
             TotalNumberOfResults = brewerDbBeersResult.TotalNumberOfResults;
+
             Style = new SingleSelectList<Style, int>(
                 brewerDbStylesResult.Objects,
                 s => s.Id,
                 s => s.Name,
                 selectedStyle);
+            Style.Items.Insert(0, new SelectListItem
+            {
+                Value = "0",
+                Text = "All Style",
+                Selected = selectedStyle == 0
+            });
+
             OrderBy = new SingleSelectList<BeersOrderBy, BeersOrderBy>(
                 Enum.GetValues(typeof(BeersOrderBy)).Cast<BeersOrderBy>(),
                 o => o,
