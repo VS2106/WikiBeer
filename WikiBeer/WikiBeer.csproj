@@ -168,6 +168,9 @@
     <Compile Include="Core\Models\BrewerDbResults\BrewerDbCollectionResult.cs" />
     <Compile Include="Core\Models\BrewerDbResults\BrewerDbResult.cs" />
     <Compile Include="Core\Models\BrewerDbResults\BrewerDbSingelResult.cs" />
+    <Compile Include="Core\Models\ViewModels\Beers\BeersOrderBy.cs" />
+    <Compile Include="Core\Models\ViewModels\Beers\IndexGet.cs" />
+    <Compile Include="Core\Models\ViewModels\Beers\IndexPost.cs" />
     <Compile Include="Core\Repositories\IBeerRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
