@@ -2,6 +2,11 @@
 
 @{
     ViewData.Add("class", "selectpicker margin");
+    ViewData.Add("data-width", "70%");
+    if (ViewData.ModelMetadata.Description== "data-live-search")
+    {
+        ViewData.Add("data-live-search", "true");
+    }
 }
 @Html.DropDownListFor(
     m => m, Model.Items,

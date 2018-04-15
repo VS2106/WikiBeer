@@ -4,8 +4,7 @@
     {
         public int CurrentPageNumber { get; set; }
         public int Style { get; set; }
-        public BeersOrderBy OrderBy { get; set; }
-        public bool IsSortAsc { get; set; }
+        public BeersSortBy SortBy { get; set; }
         public string SearchName { get; set; }
     }
 }

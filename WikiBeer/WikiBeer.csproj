@@ -168,7 +168,7 @@
     <Compile Include="Core\Models\BrewerDbResults\BrewerDbCollectionResult.cs" />
     <Compile Include="Core\Models\BrewerDbResults\BrewerDbResult.cs" />
     <Compile Include="Core\Models\BrewerDbResults\BrewerDbSingelResult.cs" />
-    <Compile Include="Core\Models\ViewModels\Beers\BeersOrderBy.cs" />
+    <Compile Include="Core\Models\ViewModels\Beers\BeersSortBy.cs" />
     <Compile Include="Core\Models\ViewModels\Beers\IndexGet.cs" />
     <Compile Include="Core\Models\ViewModels\Beers\IndexPost.cs" />
     <Compile Include="Core\Repositories\IBeerRepository.cs" />
@@ -194,12 +194,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="imgs\unknownLabel.png" />
     <Content Include="Scripts\bootstrap-select.js" />
     <Content Include="Scripts\bootstrap-select.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap-select.js.map" />
     <Content Include="Content\bootstrap-select.css.map" />
+    <Content Include="Content\Beers\Index.css" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -226,11 +228,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Beers\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SingleSelectList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Beers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

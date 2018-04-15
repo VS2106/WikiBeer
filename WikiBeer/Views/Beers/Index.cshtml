@@ -1,0 +1,61 @@
+﻿@model WikiBeer.Core.Models.ViewModels.Beers.IndexGet
+@{
+    ViewBag.Title = "Beers";
+}
+
+@section CssIncludes{
+    @Styles.Render("~/Content/Beers/Index.css")
+}
+
+<div class="row row-eq-height">
+    <div class="col-md-3 col-xs-5 navigation-col">
+        <div class="content">
+            <h2>Wiki beer</h2>
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(m => m.SearchName)
+                <div class="form-inline">
+                    <input placeholder="Search by name" class="searchBox form-control">
+                    <button class="btn searchBtn">Search</button>
+                </div>
+                <br/>
+                @Html.LabelFor(m => m.Style)<br/>
+                @Html.EditorFor(m => m.Style)<br/>
+                @Html.LabelFor(m => m.SortBy)<br/>
+                @Html.EditorFor(m => m.SortBy)<br/>
+
+                <nav aria-label="beers pagging">
+                    <ul class="pagination">
+                        <li class="@(Model.CurrentPageNumber == 1 ? "disabled" : "")">
+                            <a href="#">Previous</a>
+                        </li>
+                        <li >
+                            <a href="#">@Model.CurrentPageNumber</a>
+                        </li>
+                        <li class="@(Model.CurrentPageNumber == Model.TotalNumberOfPages ? "disabled" : "")">
+                            <a href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            }
+        </div>
+    </div>
+    <div class="col-md-9 col-xs-7 beers-col">
+        <div class="row">
+            @foreach (var beer in Model.Beers)
+            {
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img class="beerLabel" src="@(beer.Label==null?"../imgs/unknownLabel.png":beer.Label.MediumImagePath)" alt="No label">
+                        <div class="caption">
+                            <h4 class="beerName">
+                                <a href="#" title="@beer.Name">@beer.Name</a>
+                            </h4>
+                            <p class="block-with-text">@beer.Description</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using WikiBeer.Core.Models.ViewModels.Beers;
 using WikiBeer.Core.Repositories;
 
 namespace WikiBeer.Controllers
@@ -21,7 +22,7 @@ namespace WikiBeer.Controllers
         {
             var beers = await _beerRepo.Value.GetAllAsync();
             var styles = await _styleRepo.Value.GetAllAsync();
-            return new EmptyResult();
+            return View(new IndexGet(beers, styles, 0, BeersSortBy.NameAsc, string.Empty));
         }
     }
 }

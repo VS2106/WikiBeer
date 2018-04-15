@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 using WikiBeer.Core.Helpers;
 using WikiBeer.Core.Models.BrewerDbResults;
 
@@ -11,15 +11,18 @@ namespace WikiBeer.Core.Models.ViewModels.Beers
         public IEnumerable<Beer> Beers { get; set; }
         public int TotalNumberOfPages { get; set; }
         public int TotalNumberOfResults { get; set; }
+
+        [Display(Name = "Style:", Description = "data-live-search")]
         public new SingleSelectList<Style, int> Style { get; set; }
-        public new SingleSelectList<BeersOrderBy, BeersOrderBy> OrderBy { get; set; }
+
+        [Display(Name = "Sort by:")]
+        public new SingleSelectList<BeersSortBy, BeersSortBy> SortBy { get; set; }
 
         public IndexGet(
             BrewerDbCollectionResult<Beer> brewerDbBeersResult,
             BrewerDbCollectionResult<Style> brewerDbStylesResult,
             int selectedStyle,
-            BeersOrderBy selectedOrderBy,
-            bool isSortAsc,
+            BeersSortBy selectedSortBy,
             string searchName
         )
         {
@@ -40,12 +43,11 @@ namespace WikiBeer.Core.Models.ViewModels.Beers
                 Selected = selectedStyle == 0
             });
 
-            OrderBy = new SingleSelectList<BeersOrderBy, BeersOrderBy>(
-                Enum.GetValues(typeof(BeersOrderBy)).Cast<BeersOrderBy>(),
+            SortBy = new SingleSelectList<BeersSortBy, BeersSortBy>(
+                BeersSortByExtension.SortBys,
                 o => o,
-                o => o.ToString(),
-                selectedOrderBy);
-            IsSortAsc = isSortAsc;
+                o => o.GetName(),
+                selectedSortBy);
             SearchName = searchName;
         }
     }
