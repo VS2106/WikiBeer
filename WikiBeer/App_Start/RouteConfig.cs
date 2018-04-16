@@ -16,7 +16,7 @@ namespace WikiBeer
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Beers", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
