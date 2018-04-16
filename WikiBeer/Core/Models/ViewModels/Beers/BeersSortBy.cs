@@ -25,5 +25,27 @@ namespace WikiBeer.Core.Models.ViewModels.Beers
                 default: return beersSortBy.ToString();
             }
         }
+
+        public static string GetOrderQuerry(this BeersSortBy beersSortBy)
+        {
+            switch (beersSortBy)
+            {
+                case BeersSortBy.NameAsc: return "name";
+                case BeersSortBy.NameDesc: return "name";
+                case BeersSortBy.CreateDateDesc: return "createDate";
+                default: return "name";
+            }
+        }
+
+        public static string GetSortQuerry(this BeersSortBy beersSortBy)
+        {
+            switch (beersSortBy)
+            {
+                case BeersSortBy.NameAsc: return "ASC";
+                case BeersSortBy.NameDesc: return "DESC";
+                case BeersSortBy.CreateDateDesc: return "DESC";
+                default: return "ASC";
+            }
+        }
     }
 }

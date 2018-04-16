@@ -1,0 +1,58 @@
+﻿@model IndexGet
+<div class="col-md-3 col-xs-4" id="beersNavigation-col">
+    @using (Html.BeginForm())
+    {
+        <a href="@Url.Action("Index")">
+            <h2>Wiki beer</h2>
+        </a>
+        @Html.HiddenFor(m => m.SearchName)
+        @Html.HiddenFor(m => m.CurrentPageNumber)
+        <div class="form-inline">
+            <input placeholder="Search by name" class="form-control" id="searchByNameBox">
+            <button class="btn" id="searchByNameBoxSubmitBtn">Search</button>
+        </div>
+        <br/>
+        @Html.LabelFor(m => m.Style)<br/>
+        @Html.EditorFor(m => m.Style)<br/>
+        @Html.LabelFor(m => m.SortBy)<br/>
+        @Html.EditorFor(m => m.SortBy)<br/>
+        <nav aria-label="beers paging navigation">
+            <ul class="pagination">
+                <li class="@(Model.CurrentPageNumber == 1 ? "disabled" : "")">
+                    <a href="#" class="previousPage">Previous</a>
+                </li>
+                <li>
+                    <a href="#">@Model.CurrentPageNumber</a>
+                </li>
+                <li class="@(Model.CurrentPageNumber == Model.TotalNumberOfPages || Model.TotalNumberOfPages == 0 ? "disabled" : "")">
+                    <a href="#" class="nextPage">Next</a>
+                </li>
+            </ul>
+        </nav>
+    }
+</div>
+<div class="col-md-9 col-xs-8" id="beers-col">
+    @if (Model.Beers != null && Model.Beers.Any())
+    {
+        <div class="row">
+            @foreach (var beer in Model.Beers)
+            {
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img class="beerLabel" src="@(beer.Label == null ? "../imgs/unknownLabel.png" : beer.Label.MediumImagePath)" alt="No label">
+                        <div class="caption">
+                            <h4 class="beerName">
+                                <a href="#" title="@beer.Name">@beer.Name</a>
+                            </h4>
+                            <p class="block-with-text" title="@beer.Description">@beer.Description</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <h3 class="text-center">No beer has name "@Model.SearchName" and style "@Model.Style.SelectedText"</h3>
+    }
+</div>

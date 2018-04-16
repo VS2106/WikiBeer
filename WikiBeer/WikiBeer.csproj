@@ -195,6 +195,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="imgs\unknownLabel.png" />
+    <Content Include="Scripts\Beers\index.js" />
     <Content Include="Scripts\bootstrap-select.js" />
     <Content Include="Scripts\bootstrap-select.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -230,6 +231,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Beers\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SingleSelectList.cshtml" />
+    <Content Include="Views\Beers\IndexContent.cshtml" />
+    <Content Include="Views\Beers\web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
