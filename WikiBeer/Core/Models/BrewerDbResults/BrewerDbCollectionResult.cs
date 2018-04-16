@@ -7,7 +7,7 @@ namespace WikiBeer.Core.Models.BrewerDbResults
     public class BrewerDbCollectionResult<T> : BrewerDbResult where T : class
     {
         [DataMember(Name = "data")]
-        public IEnumerable<T> Objects { get; set; }
+        public IEnumerable<T> Instances { get; set; }
         [DataMember(Name = "currentPage")]
         public int CurrentPageNumber { get; set; }
         [DataMember(Name = "numberOfPages")]

@@ -26,13 +26,13 @@ namespace WikiBeer.Core.Models.ViewModels.Beers
             string searchName
         )
         {
-            Beers = brewerDbBeersResult.Objects;
+            Beers = brewerDbBeersResult.Instances;
             CurrentPageNumber = brewerDbBeersResult.CurrentPageNumber;
             TotalNumberOfPages = brewerDbBeersResult.TotalNumberOfPages;
             TotalNumberOfResults = brewerDbBeersResult.TotalNumberOfResults;
 
             Style = new SingleSelectList<Style, int>(
-                brewerDbStylesResult.Objects,
+                brewerDbStylesResult.Instances,
                 s => s.Id,
                 s => s.Name,
                 selectedStyle);

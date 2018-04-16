@@ -8,6 +8,6 @@ namespace WikiBeer.Core.Models.BrewerDbResults
         [DataMember(Name = "message")]
         public string Message { get; set; }
         [DataMember(Name = "data")]
-        public T Object { get; set; }
+        public T Instance { get; set; }
     }
 }
