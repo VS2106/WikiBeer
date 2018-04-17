@@ -39,7 +39,7 @@
             {
                 <div class="col-md-3">
                     <div class="thumbnail">
-                        <img class="beerLabel" src="@(beer.Label == null ? "../imgs/unknownLabel.png" : beer.Label.MediumImagePath)" alt="No label">
+                        <img class="beerLabel" src="@(beer.Label == null ? Url.Content("~/imgs/unknownLabel.png") : beer.Label.MediumImagePath)" alt="Bear label">
                         <div class="caption">
                             <h4 class="beerName">
                                 <a target="_blank" href="@Url.Action("Show", new {id = beer.Id})" title="@beer.Name">@beer.Name</a>

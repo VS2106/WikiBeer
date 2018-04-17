@@ -38,8 +38,10 @@ namespace WikiBeer.Controllers
         public async Task<ActionResult> Show(string id)
         {
             var beer = await _beerRepo.Value.GetAsync(id);
-            var brewersOfbeer = await _beerRepo.Value.GetBreweries(id);
-            return View(new ShowGet(beer.Instance, brewersOfbeer.Instances));
+            if (beer == null) return new EmptyResult();
+
+            var brewersOfBeer = await _beerRepo.Value.GetBreweries(id);
+            return View(new ShowGet(beer.Instance, brewersOfBeer.Instances));
         }
     }
 }

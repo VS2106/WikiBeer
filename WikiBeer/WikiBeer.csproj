@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -159,7 +160,6 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BeersController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Core\Helpers\SingleSelectList.cs" />
     <Compile Include="Core\Models\Beer.cs" />
     <Compile Include="Core\Models\Style.cs" />
@@ -228,9 +228,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Beers\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SingleSelectList.cshtml" />
     <Content Include="Views\Beers\IndexContent.cshtml" />
