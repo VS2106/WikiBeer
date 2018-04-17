@@ -16,7 +16,7 @@ namespace WikiBeer.Core.Models
         [DataMember(Name = "style")]
         public Style Style { get; set; }
         [DataMember(Name = "labels")]
-        public Lable Label { get; set; }
+        public Label Label { get; set; }
 
         [DataMember(Name = "isOrganic")]
         public string Organic { private get; set; }

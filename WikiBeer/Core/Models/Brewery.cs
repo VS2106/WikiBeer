@@ -12,6 +12,6 @@ namespace WikiBeer.Core.Models
         [DataMember(Name = "description")]
         public string Description { get; set; }
         [DataMember(Name = "images")]
-        public Lable Label { get; set; }
+        public Label Label { get; set; }
     }
 }

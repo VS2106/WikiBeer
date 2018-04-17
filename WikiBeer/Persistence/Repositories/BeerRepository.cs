@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using WikiBeer.Core.Models;
-using WikiBeer.Core.Models.BrewerDbResults;
+using WikiBeer.Core.Models.BreweryDbResults;
 using WikiBeer.Core.Repositories;
 using WikiBeer.Persistence.Repositories.Base;
 
@@ -12,7 +12,7 @@ namespace WikiBeer.Persistence.Repositories
         {
         }
 
-        public async Task<BrewerDbCollectionResult<Brewery>> GetBreweries(string beerId)
+        public async Task<BreweryDbCollectionResult<Brewery>> GetBreweries(string beerId)
         {
             return await GetDetailCollectionAsync<Brewery>(beerId, "breweries");
         }

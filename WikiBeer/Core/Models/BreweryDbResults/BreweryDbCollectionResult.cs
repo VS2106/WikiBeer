@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace WikiBeer.Core.Models.BrewerDbResults
+namespace WikiBeer.Core.Models.BreweryDbResults
 {
     [DataContract]
-    public class BrewerDbCollectionResult<T> : BrewerDbResult where T : class
+    public class BreweryDbCollectionResult<T> : BreweryDbResult where T : class
     {
         [DataMember(Name = "data")]
         public IEnumerable<T> Instances { get; set; }

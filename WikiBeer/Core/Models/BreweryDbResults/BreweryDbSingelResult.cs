@@ -1,9 +1,9 @@
 ﻿using System.Runtime.Serialization;
 
-namespace WikiBeer.Core.Models.BrewerDbResults
+namespace WikiBeer.Core.Models.BreweryDbResults
 {
     [DataContract]
-    public class BrewerDbSingelResult<T> : BrewerDbResult where T : class
+    public class BreweryDbSingelResult<T> : BreweryDbResult where T : class
     {
         [DataMember(Name = "message")]
         public string Message { get; set; }

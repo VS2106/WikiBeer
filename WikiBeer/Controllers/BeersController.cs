@@ -40,8 +40,8 @@ namespace WikiBeer.Controllers
             var beer = await _beerRepo.Value.GetAsync(id);
             if (beer == null) return new EmptyResult();
 
-            var brewersOfBeer = await _beerRepo.Value.GetBreweries(id);
-            return View(new ShowGet(beer.Instance, brewersOfBeer.Instances));
+            var breweriesOfBeer = await _beerRepo.Value.GetBreweries(id);
+            return View(new ShowGet(beer.Instance, breweriesOfBeer.Instances));
         }
     }
 }

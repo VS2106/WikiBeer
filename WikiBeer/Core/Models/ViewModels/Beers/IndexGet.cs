@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using WikiBeer.Core.Helpers;
-using WikiBeer.Core.Models.BrewerDbResults;
+using WikiBeer.Core.Models.BreweryDbResults;
 
 namespace WikiBeer.Core.Models.ViewModels.Beers
 {
@@ -19,20 +19,20 @@ namespace WikiBeer.Core.Models.ViewModels.Beers
         public new SingleSelectList<BeersSortBy, BeersSortBy> SortBy { get; set; }
 
         public IndexGet(
-            BrewerDbCollectionResult<Beer> brewerDbBeersResult,
-            BrewerDbCollectionResult<Style> brewerDbStylesResult,
+            BreweryDbCollectionResult<Beer> breweryDbBeersResult,
+            BreweryDbCollectionResult<Style> breweryDbStylesResult,
             int selectedStyle,
             BeersSortBy selectedSortBy,
             string searchName
         )
         {
-            Beers = brewerDbBeersResult.Instances;
-            CurrentPageNumber = brewerDbBeersResult.CurrentPageNumber;
-            TotalNumberOfPages = brewerDbBeersResult.TotalNumberOfPages;
-            TotalNumberOfResults = brewerDbBeersResult.TotalNumberOfResults;
+            Beers = breweryDbBeersResult.Instances;
+            CurrentPageNumber = breweryDbBeersResult.CurrentPageNumber;
+            TotalNumberOfPages = breweryDbBeersResult.TotalNumberOfPages;
+            TotalNumberOfResults = breweryDbBeersResult.TotalNumberOfResults;
 
             Style = new SingleSelectList<Style, int>(
-                brewerDbStylesResult.Instances,
+                breweryDbStylesResult.Instances,
                 s => s.Id,
                 s => s.Name,
                 selectedStyle);

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using WikiBeer.Core.Models.BrewerDbResults;
+using WikiBeer.Core.Models.BreweryDbResults;
 using WikiBeer.Core.Repositories.Base;
 
 namespace WikiBeer.Persistence.Repositories.Base
@@ -23,24 +23,24 @@ namespace WikiBeer.Persistence.Repositories.Base
             _resourceNamePlural = resourceNamePlural;
         }
 
-        public async Task<BrewerDbCollectionResult<T>> GetAllAsync(params KeyValuePair<string, string>[] parameters)
+        public async Task<BreweryDbCollectionResult<T>> GetAllAsync(params KeyValuePair<string, string>[] parameters)
         {
             var response = await GetHttpClient()
                 .GetAsync($"{_resourceNamePlural}/?key={APiKey}{BuildParametersList(parameters)}");
             response.EnsureSuccessStatusCode();
-            return await response.Content.ReadAsAsync<BrewerDbCollectionResult<T>>();
+            return await response.Content.ReadAsAsync<BreweryDbCollectionResult<T>>();
         }
 
-        public async Task<BrewerDbSingelResult<T>> GetAsync(TResourceIdentifier identifier)
+        public async Task<BreweryDbSingelResult<T>> GetAsync(TResourceIdentifier identifier)
         {
             var response = await GetHttpClient()
                 .GetAsync($"{_resourceNameSingular}/{identifier}/?key={APiKey}");
             if (response.IsSuccessStatusCode)
-                return await response.Content.ReadAsAsync<BrewerDbSingelResult<T>>();
+                return await response.Content.ReadAsAsync<BreweryDbSingelResult<T>>();
             return null;
         }
 
-        public async Task<BrewerDbCollectionResult<TDetailType>> GetDetailCollectionAsync<TDetailType>(
+        public async Task<BreweryDbCollectionResult<TDetailType>> GetDetailCollectionAsync<TDetailType>(
             TResourceIdentifier identifier,
             string detailResourceNamePlural)
             where TDetailType : class
@@ -48,11 +48,11 @@ namespace WikiBeer.Persistence.Repositories.Base
             var response = await GetHttpClient()
                 .GetAsync($"{_resourceNameSingular}/{identifier}/{detailResourceNamePlural}/?key={APiKey}");
             if (response.IsSuccessStatusCode)
-                return await response.Content.ReadAsAsync<BrewerDbCollectionResult<TDetailType>>();
+                return await response.Content.ReadAsAsync<BreweryDbCollectionResult<TDetailType>>();
             return null;
         }
 
-        public async Task<BrewerDbSingelResult<TDetailType>> GetDetailAsync<TDetailType>(
+        public async Task<BreweryDbSingelResult<TDetailType>> GetDetailAsync<TDetailType>(
             TResourceIdentifier identifier,
             string detailResourceNameSingular)
             where TDetailType : class
@@ -60,12 +60,12 @@ namespace WikiBeer.Persistence.Repositories.Base
             var response = await GetHttpClient()
                 .GetAsync($"{_resourceNameSingular}/{identifier}/{detailResourceNameSingular}/?key={APiKey}");
             if (response.IsSuccessStatusCode)
-                return await response.Content.ReadAsAsync<BrewerDbSingelResult<TDetailType>>();
+                return await response.Content.ReadAsAsync<BreweryDbSingelResult<TDetailType>>();
             return null;
         }
 
         //TODO later: Add/Update/Delte are not required by the coding challenge
-        public async Task<BrewerDbSingelResult<T>> AddAsync(T model)
+        public async Task<BreweryDbSingelResult<T>> AddAsync(T model)
         {
             throw new System.NotImplementedException();
         }

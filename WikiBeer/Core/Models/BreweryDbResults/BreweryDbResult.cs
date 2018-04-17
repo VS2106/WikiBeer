@@ -1,9 +1,9 @@
 ﻿using System.Runtime.Serialization;
 
-namespace WikiBeer.Core.Models.BrewerDbResults
+namespace WikiBeer.Core.Models.BreweryDbResults
 {
     [DataContract]
-    public class BrewerDbResult
+    public class BreweryDbResult
     {
         [DataMember(Name = "status")]
         public string Status { get; set; }

@@ -22,8 +22,8 @@ namespace WikiBeer.Core.Models.ViewModels.Beers
                 beersQuery.Add(new KeyValuePair<string, string>("name", SearchName.Trim()));
             }
             beersQuery.Add(new KeyValuePair<string, string>("p", CurrentPageNumber.ToString()));
-            beersQuery.Add(new KeyValuePair<string, string>("order", SortBy.GetOrderQuerry()));
-            beersQuery.Add(new KeyValuePair<string, string>("sort", SortBy.GetSortQuerry()));
+            beersQuery.Add(new KeyValuePair<string, string>("order", SortBy.GetOrderQueryValue()));
+            beersQuery.Add(new KeyValuePair<string, string>("sort", SortBy.GetSortQueryValue()));
             return beersQuery.ToArray();
         }
     }

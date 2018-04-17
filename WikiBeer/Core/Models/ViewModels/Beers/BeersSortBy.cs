@@ -26,7 +26,7 @@ namespace WikiBeer.Core.Models.ViewModels.Beers
             }
         }
 
-        public static string GetOrderQuerry(this BeersSortBy beersSortBy)
+        public static string GetOrderQueryValue(this BeersSortBy beersSortBy)
         {
             switch (beersSortBy)
             {
@@ -37,7 +37,7 @@ namespace WikiBeer.Core.Models.ViewModels.Beers
             }
         }
 
-        public static string GetSortQuerry(this BeersSortBy beersSortBy)
+        public static string GetSortQueryValue(this BeersSortBy beersSortBy)
         {
             switch (beersSortBy)
             {

@@ -164,10 +164,10 @@
     <Compile Include="Core\Models\Beer.cs" />
     <Compile Include="Core\Models\Style.cs" />
     <Compile Include="Core\Models\Brewery.cs" />
-    <Compile Include="Core\Models\Lable.cs" />
-    <Compile Include="Core\Models\BrewerDbResults\BrewerDbCollectionResult.cs" />
-    <Compile Include="Core\Models\BrewerDbResults\BrewerDbResult.cs" />
-    <Compile Include="Core\Models\BrewerDbResults\BrewerDbSingelResult.cs" />
+    <Compile Include="Core\Models\Label.cs" />
+    <Compile Include="Core\Models\BreweryDbResults\BreweryDbCollectionResult.cs" />
+    <Compile Include="Core\Models\BreweryDbResults\BreweryDbResult.cs" />
+    <Compile Include="Core\Models\BreweryDbResults\BreweryDbSingelResult.cs" />
     <Compile Include="Core\Models\ViewModels\Beers\BeersSortBy.cs" />
     <Compile Include="Core\Models\ViewModels\Beers\IndexGet.cs" />
     <Compile Include="Core\Models\ViewModels\Beers\IndexPost.cs" />
