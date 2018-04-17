@@ -42,7 +42,7 @@
                         <img class="beerLabel" src="@(beer.Label == null ? "../imgs/unknownLabel.png" : beer.Label.MediumImagePath)" alt="No label">
                         <div class="caption">
                             <h4 class="beerName">
-                                <a href="#" title="@beer.Name">@beer.Name</a>
+                                <a target="_blank" href="@Url.Action("Show", new {id = beer.Id})" title="@beer.Name">@beer.Name</a>
                             </h4>
                             <p class="block-with-text" title="@beer.Description">@beer.Description</p>
                         </div>

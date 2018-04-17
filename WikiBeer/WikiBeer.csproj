@@ -171,6 +171,7 @@
     <Compile Include="Core\Models\ViewModels\Beers\BeersSortBy.cs" />
     <Compile Include="Core\Models\ViewModels\Beers\IndexGet.cs" />
     <Compile Include="Core\Models\ViewModels\Beers\IndexPost.cs" />
+    <Compile Include="Core\Models\ViewModels\Beers\ShowGet.cs" />
     <Compile Include="Core\Repositories\IBeerRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -234,6 +235,7 @@
     <Content Include="Views\Shared\EditorTemplates\SingleSelectList.cshtml" />
     <Content Include="Views\Beers\IndexContent.cshtml" />
     <Content Include="Views\Beers\web.config" />
+    <Content Include="Views\Beers\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

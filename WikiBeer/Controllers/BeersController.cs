@@ -33,5 +33,13 @@ namespace WikiBeer.Controllers
             var styles = await _styleRepo.Value.GetAllAsync();
             return PartialView("IndexContent", new IndexGet(beers, styles, context.Style, context.SortBy, context.SearchName));
         }
+
+        [HttpGet]
+        public async Task<ActionResult> Show(string id)
+        {
+            var beer = await _beerRepo.Value.GetAsync(id);
+            var brewersOfbeer = await _beerRepo.Value.GetBreweries(id);
+            return View(new ShowGet(beer.Instance, brewersOfbeer.Instances));
+        }
     }
 }
