@@ -16,6 +16,14 @@ namespace WikiBeer.Core.Helpers
                 return Items.Single(sli => sli.Selected).Text;
             }
         }
+
+        public string SelectedValue
+        {
+            get
+            {
+                return Items.Single(sli => sli.Selected).Value;
+            }
+        }
     }
 
     public class SingleSelectList<TCollectionItem, TKey> : SingleSelectList

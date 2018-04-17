@@ -9,7 +9,7 @@ namespace WikiBeer.Core.Models.ViewModels.Beers
         public BeersSortBy SortBy { get; set; }
         public string SearchName { get; set; }
 
-        public KeyValuePair<string, string>[] GetQuery()
+        public virtual KeyValuePair<string, string>[] GetQuery()
         {
             var beersQuery = new List<KeyValuePair<string, string>>();
             if (Style != 0)
